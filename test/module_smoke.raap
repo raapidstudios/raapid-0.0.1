@@ -1,0 +1,11 @@
+import "math_helpers.raap" as math_helpers
+import random as dice
+import time
+import date
+
+say math_helpers.double(21)
+math_helpers.announce("hello from another file")
+say dice.randint(1, 1)
+say time.now()
+time.sleep(0.01)
+say date.today()

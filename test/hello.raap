@@ -1,0 +1,114 @@
+make add_numbers(left:int, right:int) returning int {
+    give left + right
+}
+
+make age_message(value:int) returning string {
+    if value == 20 {
+        return "You are twenty"
+    } else {
+        return "You are not twenty"
+    }
+}
+
+make is_adult(value:int) returning boolean {
+    return value > 17
+}
+
+make double_value(value:float) returning float {
+    return value * 2.0
+}
+
+make greet(name:string) returning none {
+    say "Hello", name
+    return
+}
+
+make announce_done() {
+    say "No-value function inferred as void"
+}
+
+ask "What is your age: " store in age:int
+let name be "Parth"
+let ag be 20
+let a be address of ag
+say a
+say value at a
+set value at a to 27
+say a
+say value at a
+
+say "FUNCTIONS: typed parameters, calls, and return values"
+make total be add_numbers(20, 22)
+say "sum:", total
+say "age:", age_message(age)
+say "adult:", is_adult(age)
+say "double:", double_value(2.5)
+greet(name)
+announce_done()
+
+if age == 20 {
+    say "You are 20"
+    say a
+}
+
+elif age < 20 {
+    say "You are younger than 20"
+}
+
+else {
+    say "You are older than 20"
+}
+
+say "WHILE: counter reaches 3"
+let i be 0
+while i < 3{
+    say i
+    set i to i + 1
+}
+say i
+
+say "WHILE: false condition skips the body"
+while false{
+    say "ERROR: false while body ran"
+}
+
+say "RANGE: values from 1 through 5"
+for value from 1 to 5{
+    say value
+}
+
+say "LIST: indexing, assignment, and iteration"
+let numbers be [10, 20, 30]
+say numbers[1]
+set numbers[1] to 25
+for number in numbers{
+    say number
+}
+
+say "LIST: string iteration"
+let names be ["Ada", "Grace"]
+for name in names{
+    say name
+}
+
+say "REPEAT: twice"
+let repetitions be 2
+repeat{
+    say "Hello"
+} repetitions times
+
+say "OPERATORS: and/or/not, >=, and !="
+say true and !false, false || true, 5 >= 5, 5 != 3
+
+ask "Enter a number for factorial: " store in w
+
+make factorial(number){
+    if number <= 1 {
+        give 1
+    } else {
+        give number * factorial(number - 1)
+    }
+}
+
+let g be factorial(w)
+say g

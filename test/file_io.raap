@@ -1,0 +1,14 @@
+import file_io
+
+let filename be "test/hello.txt"
+let write_success = file_io.write_file(filename, "Hello World!")
+
+if write_success == 1 {
+    say "File written successfully!"
+} else {
+    say "Failed to write file."
+}
+
+let file_data = file_io.read_file(filename)
+say "File Contents:"
+say file_data

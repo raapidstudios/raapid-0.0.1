@@ -1,0 +1,7 @@
+function double(value: int) returning int {
+    return value * 2
+}
+
+function announce(message: string) {
+    say "Module says:", message
+}

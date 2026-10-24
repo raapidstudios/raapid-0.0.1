@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raapid-lang"
+version = "0.0.1"
+description = "A small LLVM-backed programming language"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["llvmlite>=0.50"]
+
+[project.scripts]
+raapid = "main:main"
+
+[tool.setuptools]
+py-modules = ["AST", "Builtins", "Compiler", "JITcompile", "Lexer", "Modules", "Parser", "Token", "main"]
+packages = ["raapid_builtins"]
